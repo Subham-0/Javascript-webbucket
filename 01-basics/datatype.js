@@ -1,8 +1,5 @@
 /*There are two datatype in js
-1 primitive dataatype
-2 reference datatype */
-
-
+1 primitive dataatype*/
 
 /*Number
 String
@@ -10,8 +7,11 @@ Boolean
 BigInt
 undefined
 null 
-Symbol
-Object*/
+Symbol*/
+
+
+/*2. reference datatype 
+    Object*/
 
 let num = 50;
 console.log(num);
