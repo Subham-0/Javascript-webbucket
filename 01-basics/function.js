@@ -48,7 +48,7 @@ function assinfNos (num1,num2){
     //console.log("hello");         // can not accessible because return is the exit point of function
 
 }
-const sum = assinfNos(10,34);
+let sum = assinfNos(10,34);
 console.log(sum);
 console.log( assinfNos(10,34));
 
@@ -84,3 +84,107 @@ const user1 = {                 //function inside a object
 console.log(user1);
 user1.userMessage();
 console.log(user1.userMessage());
+
+
+if(true){
+    let a = 10;
+    const b = 20;
+    var c = 30 ;
+    console.log(a);
+    console.log(b);
+
+}
+c = 300;
+console.log(c);
+
+function parameterFunction(username){
+    function childFunction(location,num1,num2){
+        console.log(`curently I'm at the office loccation is ${location}` );
+        return num1+num2;
+
+    }
+   sum = (childFunction("cuttack",12,34));
+   console.log(sum);
+   //this is cannot be accessable if we don't call the parameterFunction
+//    parentFunction("Ajay");
+//    this not accessible because of we can declare a function in side it's block(scope of the function)
+
+}
+parameterFunction("Subham");
+
+//Arrow function (fat arrow function)
+
+const sumTwoNos = (num1,num2)=>{
+    //body
+    return num1+num2;
+    //console.log("hello");
+}
+console.log(sumTwoNos(3,5));
+
+
+const message = (msg = "good evening")=>{
+    console.log(msg);
+}
+message();
+
+// const message = (hhh)=>{
+//     console.log(hhh);
+// }
+// message(msg = "good evening");  // it can be show bug in a mass of code 
+//  so never use assignment operator in actual parameter
+
+
+const message1 = (msg = "good evening")=>{
+    console.log(msg);
+}
+message("string");
+
+const summation = (number1=10,number2=20)=>{
+    return number1+number2
+}
+const result = summation();
+console.log(result);
+
+
+const additon = (num1,num2)=> num1+num2;
+console.log(additon(4,5));
+
+const object2 = {
+    name : "abd",
+    id : 234,
+    location : "bbsr",
+    functionNAme : function(){
+         console.log(`hello username is ${this.name}`);
+        console.log(this);  // give total object with detailed
+    }
+
+}
+object2.functionNAme();
+console.log(this);// give blanck object 
+// console.log(`hello username is ${this.name}`);  // give undefined (outside of the object the name is not accessable by this 
+console.log(`hello username is ${object2.name}`); 
+
+oneCount(5);
+function oneCount(count){
+    console.log(count+1);
+}
+
+//  twoCount(10);    //in arrow function never call afunction before function defintion. Otherwise it will behave like hoisting.
+//  const twoCount = (count) =>{
+//     console.log(count + 2) }
+
+let a;
+//a =10;
+ console.log(a); // undefined 
+a =10;
+
+//IIFE(Immidiate involved function exctuion)
+
+(function fetchingData(){
+console.log("Data fetched fron database");
+})();
+ //if we are defining more than one IIFE function then we need to properly closed the first function by using semi colon ";".
+
+ ((name)=>{
+    console.log(`database fetch from this table ${name}`);
+ })('Subham');
